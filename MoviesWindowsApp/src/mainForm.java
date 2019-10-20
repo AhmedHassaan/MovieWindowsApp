@@ -83,6 +83,13 @@ public class mainForm {
 		frame.getContentPane().add(btnLoad);
 		
 		JButton btnInfo = new JButton("Info");
+		btnInfo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				infoForm info = new infoForm(moviesList.get(list.getSelectedIndex()));
+				info.setVisible(true);
+				
+			}
+		});
 		btnInfo.setBounds(143, 420, 123, 47);
 		frame.getContentPane().add(btnInfo);
 		
