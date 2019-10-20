@@ -77,6 +77,7 @@ public class mainForm {
 			public void actionPerformed(ActionEvent e) {
 				fillData();
 				list.setCellRenderer(new AsyncTaskTestRenderer());
+				list.setSelectedIndex(0);
 			}
 		});
 		btnLoad.setBounds(10, 420, 123, 47);
@@ -87,7 +88,6 @@ public class mainForm {
 			public void actionPerformed(ActionEvent e) {
 				infoForm info = new infoForm(moviesList.get(list.getSelectedIndex()));
 				info.setVisible(true);
-				
 			}
 		});
 		btnInfo.setBounds(143, 420, 123, 47);
@@ -227,6 +227,7 @@ public class mainForm {
 
             JLabel label = (JLabel) super.getListCellRendererComponent(
                     list, value, index, isSelected, cellHasFocus);
+            //new ImageIcon(new URL(moviesList.get(i).getImage()))
             label.setIcon(imageMap.get((String) value));
             label.setHorizontalTextPosition(JLabel.RIGHT);
             label.setFont(font);
